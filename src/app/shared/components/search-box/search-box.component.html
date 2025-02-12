@@ -1,0 +1,18 @@
+<!-- <input
+ type="text"
+ [placeholder]="placeholder"
+ class="form-control"
+ (keyup.enter)="emitValue(txtInput.value)"
+ #txtInput
+> -->
+
+<form class="d-flex" role="search" (submit)="onSearch($event, txtInput.value)">
+  <input
+    class="form-control me-2"
+    type="search"
+    aria-label="Buscar"
+    [placeholder]="placeholder"
+    #txtInput
+  >
+  <button class="btn btn-outline-success" type="submit">Buscar</button>
+</form>
