@@ -50,7 +50,7 @@ export class CountriesService {
 
   searchCapital(term:string): Observable<Country[]>{
     //const url= `${this.apiUrl}/capital/${term}`;
-    return this.getCountriesRequest(`${this.apiUrl}/capital/${term}`)
+    return this.getCountriesRequest(`${this.apiUrl}/capital/${term.trim()}`)
     .pipe(
       tap( countries => this.cacheStore.byCapital = { term, countries} ),
       tap( ()=>this.saveToLocalStorage() )
@@ -58,7 +58,7 @@ export class CountriesService {
   }
 
   searchCountry(term:string):Observable<Country[]>{
-    return this.getCountriesRequest(`${this.apiUrl}/name/${term}`)
+    return this.getCountriesRequest(`${this.apiUrl}/name/${term.trim()}`)
     .pipe(
       tap( countries => this.cacheStore.byCountries = { term, countries} ),
       tap( ()=>this.saveToLocalStorage() )

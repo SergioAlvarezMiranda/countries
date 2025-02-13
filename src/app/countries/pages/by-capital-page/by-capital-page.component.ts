@@ -40,13 +40,20 @@ export class ByCapitalPageComponent implements OnInit{
     // const term = inputElement.value;
     // console.log('Desde ByCapitalPage');
     // console.log({ term });
-    this.isLoading=true;
-    this.countriesServices.searchCapital(term)
-    .subscribe(countries=>{
-      this.countries = countries;
-      this.isLoading=false;
-    })
 
-    console.log({ term });
+    this.isLoading = true;
+  this.countriesServices.searchCapital(term)
+    .subscribe({
+      next: (countries) => {
+        this.countries = countries;
+        this.isLoading = false;
+      },
+      error: (err) => {
+        console.error('Error al buscar por capital:', err);
+        this.isLoading = false;
+      }
+    });
+
+    console.log('Buscando capital:', term);
   }
 }
