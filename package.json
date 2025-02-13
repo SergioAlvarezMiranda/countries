@@ -7,8 +7,8 @@
     "build": "ng build",
     "build:github": "npm run delete:docs && npm run build:href && npm run copy:dist",
     "build:href": "ng build --base-href ./",
-    "delete:docs": "rimraf docs",
-    "copy:dist": "mkdirp docs && copyfiles dist/base/* ./docs -f",
+    "delete:docs": "del docs",
+    "copy:dist": "copyfiles dist/base/* ./docs -f",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
