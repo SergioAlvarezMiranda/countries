@@ -16,8 +16,6 @@ import { Country } from '../../interfaces/country';
     --bs-alert-link-color: var(--bs-warning-text-emphasis);
     }
     `
-
-
   ]
 })
 export class CountryTableComponent {

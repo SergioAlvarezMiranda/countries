@@ -11,7 +11,9 @@
     class="form-control me-2"
     type="search"
     aria-label="Buscar"
+    [value]="initialValue"
     [placeholder]="placeholder"
+    (keyup)="onKyPress(txtInput.value)"
     #txtInput
   >
   <button class="btn btn-outline-success" type="submit">Buscar</button>

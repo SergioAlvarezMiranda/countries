@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CountriesService } from '../../services/countries.service';
 import { Country } from '../../interfaces/country';
 
@@ -10,7 +10,7 @@ import { Country } from '../../interfaces/country';
 
   ]`
 })
-export class ByCapitalPageComponent {
+export class ByCapitalPageComponent implements OnInit{
   // @Input()
   // public term!:string;
 
@@ -25,16 +25,26 @@ export class ByCapitalPageComponent {
   // }
 
   public countries: Country[]=[];//Para mostrar en el html
+  public isLoading:boolean=false;
+  public initialValue:string= '';
+
   constructor(private countriesServices: CountriesService){}
+
+  ngOnInit(): void {
+    this.countries = this.countriesServices.cacheStore.byCapital.countries;
+    this.initialValue = this.countriesServices.cacheStore.byCapital.term;
+  }
 
   searchByCapital(term: string): void {
     // const inputElement = event.target as HTMLInputElement;
     // const term = inputElement.value;
     // console.log('Desde ByCapitalPage');
     // console.log({ term });
+    this.isLoading=true;
     this.countriesServices.searchCapital( term )
     .subscribe(countries=>{
       this.countries = countries;
+      this.isLoading=false;
     })
 
     console.log({ term });

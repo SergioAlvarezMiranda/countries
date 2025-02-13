@@ -37,7 +37,4 @@ export class CountryPageComponent implements OnInit{
       // return;
     });
   }
-
-
-
 }

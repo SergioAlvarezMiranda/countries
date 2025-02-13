@@ -13,7 +13,3 @@ Esta aplicación incluye diversas características, entre ellas:
 - Uso de `switchMap` para cambiar dinámicamente el observable y generar nuevas suscripciones basadas en el observador anterior.  
 - Visualización de imágenes en **Seville** y uso de iconos interactivos.  
 
-### Para ejecutar la aplicación:  
-
-```bash
-ng serve
