@@ -6,9 +6,9 @@ import { Country } from '../../interfaces/country';
   selector: 'shared-capital-page',
   standalone: false,
   templateUrl: './by-capital-page.component.html',
-  styles: `[
-
-  ]`
+  styles: [`
+    
+  `]
 })
 export class ByCapitalPageComponent implements OnInit{
   // @Input()

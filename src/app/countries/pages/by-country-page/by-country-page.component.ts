@@ -6,9 +6,13 @@ import { CountriesService } from '../../services/countries.service';
   selector: 'shared-country-page',
   standalone: false,
   templateUrl: './by-country-page.component.html',
-  styles: `[
-
-  ]`
+  styles: [`
+    :host {
+      display: block;
+      background-color: #f8f9fa;
+      padding: 1rem;
+    }
+  `]
 })
 export class ByCountryPageComponent implements OnInit {
   public countries: Country[]=[];//Para mostrar en el html
